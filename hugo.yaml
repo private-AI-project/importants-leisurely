@@ -1,0 +1,84 @@
+baseURL: https://leisurely.importants-studio.com/
+locale: ko-kr
+defaultContentLanguage: ko
+title: 느긋하게
+theme: PaperMod
+
+enableRobotsTXT: true
+
+services:
+  googleAnalytics:
+    ID: G-CF9CDS2XH2
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: 느긋하게
+  description: 은퇴를 앞두고 알아둘 것들. 국민연금과 퇴직연금, 건강보험료, 주택연금, 중장년 재취업을 공식 자료 근거로 정리합니다.
+  keywords: [국민연금, 퇴직연금, 연금저축, 주택연금, 건강보험료, 노후준비, 중장년재취업, 기초연금]
+  defaultTheme: auto
+  assets:
+    favicon: /favicon.svg
+    apple_touch_icon: /favicon.svg
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: false
+  ShowToc: true
+  TocOpen: false
+  ShowShareButtons: true
+  disableSpecial1stPost: true
+  hideSummary: false
+
+  homeInfoParams:
+    Title: 느긋하게
+    Content: 은퇴가 다가오면 모르는 것이 한꺼번에 몰려옵니다. 연금은 언제부터 나오는지, 건강보험료는 어떻게 바뀌는지, 퇴직금은 어디에 두는지. 하나씩 공식 자료를 찾아 정리합니다.
+
+menu:
+  main:
+    - identifier: posts
+      name: 전체 글
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: 태그
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: 검색
+      url: /search/
+      weight: 30
+    - identifier: about
+      name: 소개
+      url: /about/
+      weight: 40
+    - identifier: privacy
+      name: 개인정보처리방침
+      url: /privacy/
+      weight: 50
+
+markup:
+  goldmark:
+    extensions:
+      # 한글 물결표 범위(60~65세)를 취소선으로 먹어버려서 끈다.
+      strikethrough: false
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
