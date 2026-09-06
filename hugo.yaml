@@ -5,6 +5,7 @@ title: 느긋하게
 theme: PaperMod
 
 enableRobotsTXT: true
+enableGitInfo: true
 
 services:
   googleAnalytics:
@@ -21,14 +22,22 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputFormats:
+  LLMS:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+    - LLMS
 
 params:
   env: production
+  author: Importants Studio
   title: 느긋하게
   description: 은퇴를 앞두고 알아둘 것들. 국민연금과 퇴직연금, 건강보험료, 주택연금, 중장년 재취업을 공식 자료 근거로 정리합니다.
   keywords: [국민연금, 퇴직연금, 연금저축, 주택연금, 건강보험료, 노후준비, 중장년재취업, 기초연금]
