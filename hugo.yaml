@@ -21,6 +21,11 @@ pagination:
 minify:
   disableXML: true
   minifyOutput: true
+  tdewolff:
+    html:
+      # 속성값 따옴표를 벗기면 name=msvalidate.01 처럼 점이 든 값을
+      # 빙 소유확인 파서가 못 읽는다. 따옴표를 남긴다.
+      keepQuotes: true
 
 outputFormats:
   LLMS:
