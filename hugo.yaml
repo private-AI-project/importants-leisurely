@@ -70,6 +70,10 @@ menu:
       name: 전체 글
       url: /posts/
       weight: 10
+    - identifier: tools
+      name: 도구
+      url: /tools/
+      weight: 15
     - identifier: tags
       name: 태그
       url: /tags/
