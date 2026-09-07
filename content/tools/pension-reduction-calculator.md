@@ -17,9 +17,10 @@ faq:
     a: 근로소득과 사업소득만 봅니다. 이자, 배당, 연금소득은 감액 대상이 아닙니다.
   - q: 결과가 범위로 나오는 이유가 뭔가요?
     a: 국민연금공단이 감액 규모를 구간별 범위로 발표합니다. 초과소득월액 200만~300만원이면 월 15만~30만원처럼요. 정확한 금액은 세부 산식에 따라 갈리므로 공단에 확인하셔야 합니다.
-# cover:
-#   image: "/images/covers/pension-reduction-calculator.jpg"
-#   alt: "연금 서류와 계산기가 놓인 책상"
+cover:
+  image: "/images/covers/pension-reduction-calculator.jpg"
+  alt: "책상에서 서류를 살펴보는 모습"
+  caption: "사진: Gustavo Fring / Pexels"
 ---
 
 ## 계산 기준
