@@ -1,4 +1,8 @@
 ---
+cascade:
+  - _target:
+      kind: page
+    outputs: [html, embed]
 title: "도구"
 description: "연금·건강보험 자격과 금액을 직접 확인해볼 수 있는 계산기와 판정기 모음입니다. 공식 기준을 근거로 만들었으며, 정확한 금액은 각 기관에서 확인하세요."
 ---

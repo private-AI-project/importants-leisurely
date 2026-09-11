@@ -1,0 +1,64 @@
+    <form id="dependent-form" class="calc-form">
+      <div class="calc-field">
+        <label for="relation">직장가입자와의 관계</label>
+        <select id="relation" name="relation">
+          <option value="ascendant">직계존속 (부모·조부모)</option>
+          <option value="spouse">배우자</option>
+          <option value="descendant">직계비속 (자녀·손자녀)</option>
+          <option value="sibling">형제·자매</option>
+        </select>
+        <p class="calc-hint">형제·자매는 재산 기준과 나이 요건이 따로 있습니다.</p>
+      </div>
+
+      <div class="calc-field" id="sibling-fields" hidden>
+        <label for="age">나이 <span>(만)</span></label>
+        <input type="number" id="age" name="age" min="0" max="120" step="1" placeholder="예: 28">
+        <p class="calc-hint">형제·자매는 30세 미만이거나 65세 이상이어야 합니다. 장애인·상이자는 나이를 보지 않습니다.</p>
+      </div>
+
+      <div class="calc-field">
+        <label for="business">사업소득 <span>(연, 원)</span></label>
+        <input type="text" id="business" name="business" inputmode="numeric" placeholder="없으면 비워두세요">
+        <label><input type="checkbox" id="bizRegistered" name="bizRegistered"> 사업자등록이 있습니다</label>
+        <label><input type="checkbox" id="rental" name="rental"> 주택임대소득이 있습니다</label>
+        <p class="calc-hint">사업소득만 따로 받습니다. 판정 규칙이 다르기 때문입니다. 사업자등록이 있으면 1원이라도 있을 때 탈락하고, 등록이 없으면 연 500만원까지는 없는 것으로 봅니다. 다만 주택임대소득이 있으면 이 500만원 특례를 못 씁니다.</p>
+      </div>
+
+      <div class="calc-field">
+        <label for="otherIncome">사업소득을 뺀 나머지 연 소득 합계 <span>(원)</span></label>
+        <input type="text" id="otherIncome" name="otherIncome" inputmode="numeric" placeholder="없으면 비워두세요">
+        <p class="calc-hint">근로소득(총급여) + 이자·배당소득 + 공적연금 + 기타소득을 다 더한 금액입니다. <strong>연금은 공적연금만</strong> 넣으세요. 국민연금·공무원연금·사학연금·군인연금·별정우체국연금이 대상이고 퇴직연금과 개인연금은 빠집니다. 이자·배당은 비과세를 뺀 금액입니다.</p>
+      </div>
+
+      <div class="calc-field">
+        <label for="property">재산세 과세표준 <span>(원)</span></label>
+        <input type="text" id="property" name="property" inputmode="numeric" placeholder="예: 200000000">
+        <p class="calc-hint">시세나 공시가격이 아닙니다. 재산세 고지서에 적힌 과세표준이고, 주택은 공시가격의 60%, 토지·건축물은 70% 수준입니다. 위택스에서도 확인됩니다.</p>
+      </div>
+
+      <div class="calc-field">
+        <label><input type="checkbox" id="special" name="special"> 장애인이거나 국가유공자·보훈보상대상자 상이자입니다</label>
+        <p class="calc-hint">해당하면 사업자등록이 있어도 사업소득 연 500만원까지 인정됩니다. 형제·자매의 나이 요건도 면제됩니다.</p>
+      </div>
+
+      <div class="calc-field">
+        <label><input type="checkbox" id="married" name="married"> 기혼입니다</label>
+        <p class="calc-hint">기혼자는 부부가 <strong>모두</strong> 소득요건을 채워야 합니다. 배우자 한 명 때문에 둘 다 탈락하는 경우가 여기서 나옵니다.</p>
+      </div>
+
+      <div id="spouse-fields" hidden>
+        <div class="calc-field">
+          <label for="spouseIncome">배우자 합산소득 <span>(연, 원)</span></label>
+          <input type="text" id="spouseIncome" name="spouseIncome" inputmode="numeric" placeholder="없으면 비워두세요">
+        </div>
+        <div class="calc-field">
+          <label for="spouseBiz">배우자 사업소득 <span>(연, 원)</span></label>
+          <input type="text" id="spouseBiz" name="spouseBiz" inputmode="numeric" placeholder="없으면 비워두세요">
+          <label><input type="checkbox" id="spouseBizRegistered" name="spouseBizRegistered"> 배우자에게 사업자등록이 있습니다</label>
+        </div>
+      </div>
+
+      <button type="submit" class="calc-submit">자격 판정하기</button>
+    </form>
+
+    <div id="calc-result" class="calc-result" hidden></div>
