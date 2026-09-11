@@ -159,6 +159,7 @@
 
     box.innerHTML = html;
     box.hidden = false;
+    if (window.gtag) gtag("event", "tool_result", { tool_path: location.pathname });
 
     var url = "https://leisurely.importants-studio.com/tools/pension-reduction-calculator/";
     var shareText = r.reduced
