@@ -8,71 +8,9 @@
   <div class="post-content">
     <p>집값과 예금, 대출과 월급만 넣으면 소득인정액을 대신 계산하고 기초연금을 받는지까지 알려드립니다. 소득인정액을 미리 구해서 넣으실 필요가 없습니다. 입력한 값은 서버로 보내지 않고 브라우저 안에서만 계산됩니다.</p>
 
-    <form id="income-recognition-form" class="calc-form">
-      <div class="calc-field">
-        <label for="household">가구 유형</label>
-        <select id="household" name="household">
-          <option value="single">단독가구 (혼자)</option>
-          <option value="couple">부부가구</option>
-        </select>
-        <p class="calc-hint">부부가구는 한 사람만 신청해도 부부 기준으로 심사합니다. 소득과 재산도 둘을 합쳐서 넣으세요.</p>
-      </div>
+    {{ partial "embed/income-recognition.html" . }}
 
-      <div class="calc-field" id="both-field" hidden>
-        <label><input type="checkbox" id="bothReceive" name="bothReceive"> 부부가 모두 기초연금을 받습니다</label>
-        <p class="calc-hint">둘 다 받으면 각자 20%씩 깎입니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="region">사는 지역</label>
-        <select id="region" name="region">
-          <option value="metro">대도시·특례시 (특별시·광역시의 구, 수원·용인·고양·창원 등)</option>
-          <option value="city">중소도시 (도의 시, 세종시)</option>
-          <option value="rural">농어촌 (도의 군)</option>
-        </select>
-        <p class="calc-hint">기본재산액 공제가 갈립니다. 대도시 1억 3,500만원, 중소도시 8,500만원, 농어촌 7,250만원입니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="work">월 근로소득 <span>(원)</span></label>
-        <input type="text" id="work" name="work" inputmode="numeric" placeholder="없으면 비워두세요">
-        <p class="calc-hint">세전 급여입니다. 월 116만원까지는 공제되고, 넘는 금액도 30%를 더 빼줍니다. 일용근로소득은 아예 안 셉니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="otherIncome">그 밖의 월 소득 <span>(원)</span></label>
-        <input type="text" id="otherIncome" name="otherIncome" inputmode="numeric" placeholder="없으면 비워두세요">
-        <p class="calc-hint">사업소득 + 임대소득 등 재산소득 + 공적이전소득을 다 더한 금액입니다. 공적이전소득은 국민연금·공무원연금·실업급여·산재급여처럼 매달 나라에서 받는 돈입니다. 근로소득과 달리 공제가 없어 그대로 더합니다. 기초연금 자신은 빼고 넣으세요.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="general">일반재산 <span>(원)</span></label>
-        <input type="text" id="general" name="general" inputmode="numeric" placeholder="예: 250000000">
-        <p class="calc-hint">집·토지·건물의 시가표준액과 전월세 보증금, 4천만원 미만 자동차를 더한 금액입니다. 주택은 공시가격을 넣으시면 됩니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="financial">금융재산 <span>(원)</span></label>
-        <input type="text" id="financial" name="financial" inputmode="numeric" placeholder="없으면 비워두세요">
-        <p class="calc-hint">예금·적금·주식·펀드·보험 해약환급금입니다. 2,000만원까지는 공제됩니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="debt">부채 <span>(원)</span></label>
-        <input type="text" id="debt" name="debt" inputmode="numeric" placeholder="없으면 비워두세요">
-        <p class="calc-hint">금융기관 대출과 임대보증금입니다. 사인 간 차용증은 원칙적으로 인정되지 않습니다.</p>
-      </div>
-
-      <div class="calc-field">
-        <label for="luxury">고급자동차·회원권 가액 <span>(원)</span></label>
-        <input type="text" id="luxury" name="luxury" inputmode="numeric" placeholder="없으면 비워두세요">
-        <p class="calc-hint">차량가액 4,000만원 이상 승용차와 골프·콘도 회원권입니다. 공제도 환산도 없이 <strong>가액 전체가 그대로 월 소득</strong>이 됩니다. 여기 걸리면 거의 탈락합니다.</p>
-      </div>
-
-      <button type="submit" class="calc-submit">소득인정액 계산하기</button>
-    </form>
-
-    <div id="calc-result" class="calc-result" hidden></div>
+    {{ partial "embed_code.html" . }}
 
     {{ .Content }}
   </div>
