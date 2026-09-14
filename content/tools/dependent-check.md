@@ -24,7 +24,6 @@ faq:
 cover:
   image: "/images/covers/dependent-check.jpg"
   alt: "서류를 살펴보는 손"
-  caption: "사진: Kampus Production / Pexels"
 ---
 
 ## 판정 기준

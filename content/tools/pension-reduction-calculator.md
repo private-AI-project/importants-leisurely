@@ -20,7 +20,6 @@ faq:
 cover:
   image: "/images/covers/pension-reduction-calculator.jpg"
   alt: "책상에서 서류를 살펴보는 모습"
-  caption: "사진: Gustavo Fring / Pexels"
 ---
 
 ## 계산 기준
