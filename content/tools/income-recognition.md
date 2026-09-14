@@ -24,7 +24,6 @@ faq:
 cover:
   image: "/images/covers/income-recognition.jpg"
   alt: "계산기와 서류가 놓인 책상"
-  caption: "사진: RDNE Stock project / Pexels"
 ---
 
 ## 왜 만들었나
