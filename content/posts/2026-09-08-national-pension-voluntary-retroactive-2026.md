@@ -1,9 +1,9 @@
 ---
-title: "국민연금 임의가입·추납: 2026년 보험료율 인상으로 달라지는 것"
+title: "국민연금 임의가입·추납 보험료율 9.5%"
 date: 2026-09-08T09:00:00+09:00
 draft: false
 slug: "national-pension-voluntary-retroactive-2026"
-description: "국민연금 가입기간이 부족하면 임의가입이나 추납으로 채울 수 있습니다. 2026년 보험료율이 9%에서 9.5%로 오르고 추납보험료 산정기준도 바뀌었습니다. 대상과 한도, 달라진 계산법을 정리했습니다."
+description: "2026년 국민연금 보험료율은 9%에서 9.5%로 오릅니다. 임의가입·추납 대상과 산정기준 변경을 정리했습니다."
 tags: ["국민연금", "임의가입", "추납", "보험료율"]
 categories: ["연금"]
 sourceUrl: "https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0047M0.do"
