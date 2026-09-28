@@ -1,9 +1,9 @@
 ---
-title: "폴리텍 중장년특화과정 2026년 명칭 변경"
+title: "폴리텍 중장년특화과정 교육비 전액 지원"
 date: 2026-09-08T09:00:00+09:00
 draft: false
 slug: "polytech-mid-career-training-2026"
-description: "폴리텍 중장년특화과정은 2026년부터 명칭이 바뀌었습니다. 교육비 지원과 대상, 훈련장려금을 정리했습니다."
+description: "만 40세 이상 미취업자는 교육비를 전액 국가 지원받습니다. 장기 6개월·단기 3개월 과정입니다."
 tags: ["중장년특화과정", "재취업", "폴리텍", "중장년내일센터"]
 categories: ["일"]
 sourceUrl: "https://ipsi.kopo.ac.kr/poly/m_97/content.do"
