@@ -47,7 +47,7 @@ faq:
 
 ## 납부기간 확인은 어디서 하나요
 
-내 가입기간과 예상 연금액은 공단에서 바로 조회됩니다. 방법은 [국민연금 예상수령액 조회 글](/posts/national-pension-estimated-amount-lookup-2026/)에 정리해 두었습니다. 크레딧으로 인정된 기간이 있다면 그 달수도 가입기간에 합산되어 나옵니다. 출산이나 군복무 크레딧은 [크레딧 확대 글](/posts/national-pension-credit-regional-support-2026/)에서 다뤘습니다.
+내 가입기간과 예상 연금액은 공단에서 바로 조회됩니다. 방법은 [국민연금 예상수령액 조회 글](/posts/national-pension-estimated-amount-lookup-2026/)에 정리해 두었습니다. 출산·군복무 크레딧은 지금 조회되는 가입기간에 안 잡힙니다. 연금을 청구할 때 공단이 확인해서 그때 더해 줍니다. 보험료를 직접 낸 실업크레딧만 바로 반영됩니다. 10년을 채웠는지 따지실 때 크레딧을 미리 더해서 보시면 안 됩니다. 출산이나 군복무 크레딧은 [크레딧 확대 글](/posts/national-pension-credit-regional-support-2026/)에서 다뤘습니다.
 
 ![서류를 놓고 이야기를 나누는 중년 부부](/images/national-pension-payment-period-2026-2.jpg)
 
