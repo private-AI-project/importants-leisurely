@@ -1,0 +1,12 @@
+{{- /* 글에 맞는 우리 앱 찾기: front matter app(slug, none 이면 빼기) → 없으면 본문에 앱 주제어가 3번 이상.
+       규칙·문구는 shared-design/apps.json → sync.py → data/dz.yaml 의 apps. */ -}}
+{{- $hit := false }}{{ $want := .Params.app }}
+{{- if ne $want "none" }}
+{{- range site.Data.dz.apps }}
+{{- if not $hit }}
+{{- if $want }}{{ if eq .slug $want }}{{ $hit = . }}{{ end }}
+{{- else if ge (len (findRE .pat $.RawContent 5)) 3 }}{{ $hit = . }}{{ end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- return $hit }}

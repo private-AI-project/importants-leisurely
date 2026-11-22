@@ -6,6 +6,15 @@
 {{- $card := "" }}{{ with $tool }}{{ $card = partial "dz/tool_card.html" (dict "t" .) }}{{ end }}
 {{- $content := partial "anchored_headings.html" .Content }}
 {{- if $card }}{{ $content = replace $content "<h2" (print $card "<h2") 1 }}{{ end }}
+{{- /* 우리 앱 홍보: 본문 셋째 소제목 앞(소제목이 둘이면 둘째 앞, 하나 이하면 본문 끝). 첫 소제목 앞은 연관 도구 자리. */}}
+{{- $app := partial "dz/app_for.html" . }}
+{{- with $app }}
+{{- $appin := partial "dz/app_promo.html" (dict "a" . "pos" "in") }}
+{{- $parts := split $content "<h2" }}{{ $n := len $parts }}
+{{- if ge $n 4 }}{{ $content = print (delimit (first 3 $parts) "<h2") $appin "<h2" (delimit (after 3 $parts) "<h2") }}
+{{- else if eq $n 3 }}{{ $content = print (index $parts 0) "<h2" (index $parts 1) $appin "<h2" (index $parts 2) }}
+{{- else }}{{ $content = print $content $appin }}{{ end }}
+{{- end }}
 {{- $toc := .TableOfContents }}
 {{- $hasToc := and (.Param "ShowToc") (gt (len (findRE "<li>" $toc)) 1) }}
 <article class="post-single dz dz-post dz-{{ $d.layout }} {{ $d.variant }}">
@@ -42,21 +51,37 @@
         <div>{{ with site.GetPage "/about" }}<a href="{{ .RelPermalink }}">{{ $L.about_link }} →</a>{{ end }}{{ with site.GetPage "/contact" }}<a href="{{ .RelPermalink }}">{{ $L.report_link }} →</a>{{ end }}</div>
       </section>
     </div>
-    <aside class="dz-aside">
+    <aside class="dz-aside"><div class="dz-stick">
       {{- if and $hasToc (ne $d.variant "c2") }}
       <nav class="dz-toc"><h4>{{ $L.toc }}</h4>{{ $toc | safeHTML }}</nav>
       {{- end }}
+      {{- if or $tool $app }}
+      <div class="dz-rail">
       {{- with $tool }}
       <a class="dz-cta" href="{{ .RelPermalink }}"><small>{{ $L.tool_card }}</small><b>{{ index (split (index (split .Title ":") 0) "(") 0 | strings.TrimSpace }}</b><span>{{ $L.tool_go }}</span></a>
       {{- end }}
-    </aside>
+      {{- with $app }}{{ partial "dz/app_promo.html" (dict "a" . "pos" "side") }}{{ end }}
+      </div>
+      {{- end }}
+    </div></aside>
   </div>
   <footer class="post-footer">
     <ul class="post-tags">{{ range (.GetTerms "tags") }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
     {{- if (.Param "ShowPostNavLinks") }}{{ partial "post_nav_links.html" . }}{{ end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
   </footer>
+{{- with $app }}{{ partial "dz/app_promo.html" (dict "a" . "pos" "bar") }}{{ end }}
 </article>
+{{- if $app }}
+<script>
+(function(){var k='dz-app-x',bar=document.querySelector('.dz-app-bar'),card=document.querySelector('.dz-app-in');
+document.querySelectorAll('a.dz-app').forEach(function(a){a.addEventListener('click',function(){if(window.gtag)gtag('event','app_card',{app:a.dataset.app,pos:a.dataset.pos,from:'blog-{{ $d.key }}'});});});
+if(!bar)return;var off=false;try{off=sessionStorage.getItem(k)==='1'}catch(e){}
+if(off||!card){bar.remove();return}
+var tick=function(){bar.classList.toggle('on',card.getBoundingClientRect().bottom<0)};addEventListener('scroll',tick,{passive:true});tick();
+bar.querySelector('.dz-app-x').addEventListener('click',function(){bar.remove();try{sessionStorage.setItem(k,'1')}catch(e){}});})();
+</script>
+{{- end }}
 <script>
 /* 목차: 지금 읽는 소제목을 표시한다. */
 (function(){var l=document.querySelectorAll('.dz-toc a');if(!l.length||!('IntersectionObserver'in window))return;

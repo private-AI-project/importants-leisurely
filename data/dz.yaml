@@ -1,6 +1,13 @@
 # shared-design/sync.py 가 만든 파일. 직접 고치지 말 것.
+"key": "leisurely"
 "layout": "C"
 "variant": "c2"
+apps:
+  - {"slug": "maejeum", "pat": "장례|부고 문자|부고장|부의금|조문객|조의금|빈소|사망신고|유족연금|상속포기|한정승인", "name": "맺음", "kicker": "", "title": "장례 절차를 / 차근차근 준비해요"}
+  - {"slug": "loary", "pat": "신생아|수유|분유|모유|산후조리|출생신고|아기 잠|재우기|잠투정|백색소음", "name": "로아리", "kicker": "비몽사몽 새벽 수유", "title": "앱을 열자마자 / 소리부터 틀어요"}
+  - {"slug": "fairlypaid", "pat": "알바|아르바이트|주휴수당|최저시급|근로계약서|급여명세서|임금체불", "name": "일한만큼 받자", "kicker": "", "title": "일한 만큼 / 당당하게 받아요"}
+  - {"slug": "floorlog", "pat": "층간소음|윗집 소음|아랫집 소음", "name": "FloorLog", "kicker": "", "title": "층간소음 / 기록으로 남겨요"}
+  - {"slug": "officekit", "pat": "스캔|PDF|첨부|업로드|사본", "name": "오피스킷", "kicker": "", "title": "복잡한 서류 작업 / 이제 앱 하나로 끝내요"}
 "labels":
   "verified": "최종 확인"
   "source": "출처"
@@ -21,6 +28,9 @@
   "author_line": "공공기관 공식 자료를 기준으로 작성하며 원문 링크를 포함합니다. 제도 변경 시 내용을 수정합니다."
   "about_link": "운영 원칙 보기"
   "report_link": "잘못된 정보 알림"
+  "app_get": "받기"
+  "app_store": "App Store에서 받기"
+  "app_close": "닫기"
 "orgs":
   "easylaw.go.kr": "찾기쉬운 생활법령"
   "law.go.kr": "국가법령정보센터"

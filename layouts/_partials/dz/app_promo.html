@@ -1,0 +1,13 @@
+{{- /* 우리 앱 홍보. pos: in(본문 중간) · side(PC 옆 칸, 목차와 같이 따라옴) · bar(휴대폰 아래, 본문 카드를 지나면 올라옴).
+       링크의 from·pos 로 블로그별·자리별 다운로드(앱스토어 캠페인)와 클릭(GA app_card)을 본다. */ -}}
+{{- $a := .a }}{{ $pos := .pos }}{{ $d := site.Data.dz }}{{ $L := $d.labels }}
+{{- $url := printf "https://importants-app.com/%s/?from=blog-%s&pos=%s" $a.slug $d.key $pos }}
+{{- $icon := printf "https://importants-app.com/%s/icon.png" $a.slug }}
+{{- $title := replace $a.title " / " " " }}
+{{- if eq $pos "in" }}
+<a class="dz-app dz-app-in" href="{{ $url }}" data-app="{{ $a.slug }}" data-pos="in" rel="noopener"><img src="{{ $icon }}" width="60" height="60" alt="" loading="lazy"><span class="dz-app-tx"><small>{{ $a.kicker | default $a.name }}</small><b>{{ $title }}</b>{{ with $a.kicker }}<em>{{ $a.name }}</em>{{ end }}</span><span class="dz-app-btn">{{ $L.app_get }}</span></a>
+{{- else if eq $pos "side" }}
+<a class="dz-app dz-app-side" href="{{ $url }}" data-app="{{ $a.slug }}" data-pos="side" rel="noopener"><span class="dz-app-hd"><img src="{{ $icon }}" width="48" height="48" alt="" loading="lazy"><span><b>{{ $a.name }}</b>{{ with $a.kicker }}<small>{{ . }}</small>{{ end }}</span></span><b class="dz-app-t">{{ $title }}</b><span class="dz-app-btn">{{ $L.app_store }}</span></a>
+{{- else }}
+<div class="dz-app-bar"><a class="dz-app" href="{{ $url }}" data-app="{{ $a.slug }}" data-pos="bar" rel="noopener"><img src="{{ $icon }}" width="44" height="44" alt="" loading="lazy"><span class="dz-app-tx"><small>{{ $a.name }}</small><b>{{ $title }}</b></span><span class="dz-app-btn">{{ $L.app_get }}</span></a><button type="button" class="dz-app-x" aria-label="{{ $L.app_close }}">×</button></div>
+{{- end }}

@@ -140,6 +140,40 @@ body.list:has(.dz){background:var(--theme)}
   .dz-post .entry-cover img{max-height:190px}
   .dz-relgrid{grid-template-columns:1fr}
 }
+/* 우리 앱 홍보(dz/app_promo.html) */
+.dz-stick{position:sticky;top:calc(var(--header-height) + 24px);max-height:calc(100vh - var(--header-height) - 40px);overflow:auto;scrollbar-width:none}
+.dz-stick::-webkit-scrollbar{display:none}
+.dz-stick .dz-toc{position:static;max-height:none;overflow:visible}
+.dz-app,.post-content a.dz-app{display:flex;align-items:center;gap:14px;color:var(--primary);text-decoration:none;box-shadow:none;border:0}
+.dz-app img,.post-content .dz-app img{width:60px;height:60px;margin:0;border-radius:22%;flex-shrink:0;box-shadow:none}
+.dz-app-tx{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1;word-break:keep-all;overflow-wrap:anywhere}
+.dz-app-side{word-break:keep-all}
+.dz-app small,.dz-app em{font-size:13px;font-style:normal;font-weight:500;color:var(--secondary);line-height:1.4}
+.dz-app b{font-size:16px;font-weight:600;line-height:1.4;color:var(--primary)}
+.dz-app-btn{flex-shrink:0;padding:9px 15px;border-radius:999px;background:var(--primary);color:var(--theme);font-size:14px;font-weight:600;white-space:nowrap;text-align:center}
+.post-content a.dz-app-in{margin:28px 0 32px;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--entry)}
+.post-content a.dz-app-in:hover{text-decoration:none;border-color:var(--secondary)}
+.dz-app-side{flex-direction:column;align-items:stretch;gap:10px;margin-top:20px;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--entry)}
+.dz-app-side .dz-app-hd{display:flex;align-items:center;gap:12px}
+.dz-app-side .dz-app-hd span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dz-app-side img{width:48px;height:48px}
+.dz-app-side b{font-size:15px}
+.dz-rail>.dz-app-side:first-child{margin-top:22px}
+.dz-app-bar{display:none}
+@media (max-width:900px){
+  .dz-stick{position:static;max-height:none;overflow:visible}
+  .dz-app-side{display:none}
+  .dz-app-bar{display:flex;align-items:center;gap:4px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;padding:10px 6px 10px 12px;border:1px solid var(--border);border-radius:16px;background:var(--theme);box-shadow:0 6px 24px rgba(0,0,0,.14);transform:translateY(calc(100% + 40px));transition:transform .25s ease;visibility:hidden}
+  .dz-app-bar.on{transform:none;visibility:visible}
+  .dz-app-bar .dz-app{flex:1;min-width:0;gap:12px}
+  .dz-app-bar img{width:44px;height:44px}
+  .dz-app-bar b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dz-app-bar small{font-size:12px}
+  .dz-app-x{width:32px;height:32px;flex-shrink:0;border:0;background:none;color:var(--secondary);font-size:20px;line-height:1;cursor:pointer}
+  body:has(.dz-app-bar.on) #top-link{bottom:100px}
+}
+@media (max-width:380px){.post-content a.dz-app-in{gap:12px;padding:14px}.post-content .dz-app-in img{width:52px;height:52px}.dz-app-in .dz-app-btn{padding:8px 12px}}
+@media (prefers-reduced-motion:reduce){.dz-app-bar{transition:none}}
 /* ===== C 문서: 왼쪽 목차·가운데 본문·오른쪽 도구 (c2는 큰 글씨 두 칸) ===== */
 :root{--theme:#fff;--dzw:1280px}
 .dz-C.dz-home .dz-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;padding:52px 0 36px}
@@ -163,7 +197,10 @@ body.list:has(.dz){background:var(--theme)}
 .dz-C .dz-toc a{padding:7px 10px;border-radius:8px}
 .dz-C .dz-toc a.on{margin-left:0;padding-left:10px;border:0;background:var(--acs)}
 .dz-C .dz-body{grid-area:body}
-.dz-C .dz-cta{position:sticky;grid-area:cta;align-self:start;top:calc(var(--header-height) + 24px);margin-top:0;border:1px solid var(--border);background:var(--entry)}
+.dz-C .dz-stick{display:contents}
+.dz-C .dz-stick .dz-toc{position:sticky;max-height:calc(100vh - 120px);overflow:auto}
+.dz-C .dz-rail{position:sticky;grid-area:cta;align-self:start;top:calc(var(--header-height) + 24px)}
+.dz-C .dz-cta{margin-top:0;border:1px solid var(--border);background:var(--entry)}
 .dz-C.dz-post .dz-ph{max-width:740px;margin-left:268px}
 .dz-C .dz-key{border-radius:0 12px 12px 0;border-left:3px solid var(--ac);background:var(--dzsoft)}
 /* c2: 큰 글씨 */
@@ -183,7 +220,7 @@ body.list:has(.dz){background:var(--theme)}
 .c2 .dz-cta span{font-size:17px;padding:13px 18px}
 .c2 .post-content table{font-size:17px}
 @media (max-width:1100px){.dz-C.dz-post .dz-grid{grid-template-columns:minmax(0,1fr) 240px;grid-template-areas:"body cta"}.dz-C .dz-toc{display:none}.dz-C .dz-mtoc{display:block}.dz-C.dz-post .dz-ph{margin-left:0}}
-@media (max-width:900px){.dz-C .dz-aside{display:block}}
+@media (max-width:900px){.dz-C .dz-aside{display:block}.dz-C .dz-rail{position:static}}
 @media (max-width:760px){
   .dz-C.dz-home .dz-hero{display:block;padding:28px 0 22px}
   .dz-C .dz-hero h1{font-size:29px}
