@@ -6,6 +6,7 @@ slug: "family-caregiver-long-term-care-pay-2026"
 description: "부모님이나 배우자가 장기요양등급을 받으면 자격증 있는 가족이 직접 돌보면서 급여를 받을 수 있습니다. 얼마를 받는지, 어떤 경우엔 못 받는지 2026년 기준 조건을 정리했습니다."
 tags: ["가족요양보호사", "노인장기요양보험", "재가급여", "요양보호사 자격증"]
 categories: ["제도"]
+app: fairlypaid
 sourceUrl: "https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=2044&ccfNo=2&cciNo=2&cnpClsNo=2"
 cover:
   image: "/images/family-caregiver-long-term-care-pay-2026-1.jpg"
